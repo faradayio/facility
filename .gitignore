@@ -4,6 +4,7 @@ Gemfile.lock
 pkg/*
 # rcov generated
 coverage
+log
 
 # rdoc generated
 rdoc
