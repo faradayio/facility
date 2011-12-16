@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors = ['Derek Kastner']
   s.email = 'dkastner@gmail.com'
   s.homepage = 'http://github.com/dkastner/facility'
-  s.summary = %Q{TODO: one-line summary of your gem}
-  s.description = %Q{TODO: detailed description of your gem}
+  s.summary = %Q{Brighter Planet's impact model for facilities}
+  s.description = %Q{Calculates the environmental impact of a facility}
   s.extra_rdoc_files = [
     'LICENSE',
     'README.rdoc',
@@ -25,10 +25,8 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib']
 
-  s.add_development_dependency 'rspec'
-  s.add_development_dependency 'bundler'
-  s.add_development_dependency 'bueller'
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'rcov'
+  s.add_runtime_dependency 'earth',     '~>0.11.0'
+  s.add_runtime_dependency 'emitter',   '~>0.11.0'
+  s.add_development_dependency 'sniff', '~>0.11.3'
 end
 
