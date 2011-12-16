@@ -18,7 +18,7 @@ module BrighterPlanet
           
           data_miner do
             process "TODO" do
-              // TODO
+              # TODO
             end
           end
         end

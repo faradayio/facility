@@ -171,23 +171,23 @@ module BrighterPlanet
           end
           
           committee :electricity_emission_factor do # returns kg CO2 / kWh
-            quorum 'from egrid subregion', :needs => :egrid_subregion do |characteristics|
+            quorum 'from eGRID subregion', :needs => :egrid_subregion do |characteristics|
               characteristics[:egrid_subregion].electricity_emission_factor
-            end
-
-            quorum 'default' do
-              EgridSubregion.fallback.electricity_emission_factor
             end
           end
           
           committee :egrid_region do
-            quorum 'from egrid subregion', :needs => :egrid_subregion do |characteristics|
+            quorum 'from eGRID subregion', :needs => :egrid_subregion do |characteristics|
               characteristics[:egrid_subregion].egrid_region
+            end
+
+            quorum 'from default' do
+              EgridSubregion.fallback
             end
           end
           
           committee :egrid_subregion do
-            quorum 'from_zip_code', :needs => :zip_code do |characteristics|
+            quorum 'from zip code', :needs => :zip_code do |characteristics|
               characteristics[:zip_code].egrid_subregion
             end
           end
